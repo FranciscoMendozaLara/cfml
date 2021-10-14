@@ -8,21 +8,23 @@
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Apr 2017 11:00:59 -0400</lastBuildDate><atom:link href="https://franciscomendozalara.github.io/cfml/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Project 1</title>
+      <title>Explore Linea Regression</title>
       <link>https://franciscomendozalara.github.io/cfml/projects/project-1/</link>
       <pubDate>Mon, 10 Apr 2017 11:00:59 -0400</pubDate>
       
       <guid>https://franciscomendozalara.github.io/cfml/projects/project-1/</guid>
-      <description> This is bullet point number one for Project 1 This is bullet point number two for Project 1  </description>
+      <description>This is an R Shiny app to explore how the linear regression model works.
+ </description>
     </item>
     
     <item>
-      <title>Project 2</title>
+      <title>Cepstral analysis for acoustic vibrations</title>
       <link>https://franciscomendozalara.github.io/cfml/projects/project-2/</link>
       <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
       
       <guid>https://franciscomendozalara.github.io/cfml/projects/project-2/</guid>
-      <description> This is bullet point number one This is bullet point number two   Education distribution   </description>
+      <description>A common technique used for speech (and sound) analysis is Cepstral analysis. For discrete-time signals, the cepstrum is defined as the inverse discrete-time Fourier Transform of the natural logarithm of the discrete-time Fourier Transform of the signal.
+ Human create speech signals through a series of controlled movements of their lungs, vocal cords, tongue, and lips. Speech can be separated into two sound types, voiced and unvoiced. Voiced speech has a roughly regular pattern in its time-frequency structure whereas unvoiced speach does not.</description>
     </item>
     
     <item>
