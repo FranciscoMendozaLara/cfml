@@ -6,21 +6,23 @@
     <description>Recent content in Projects on Carlos Francisco Mendoza Lara</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://franciscomendozalara.github.io/cfml/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://franciscomendozalara.github.io/cfml/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Explore Linear Regression</title>
       <link>https://franciscomendozalara.github.io/cfml/projects/project-1/</link>
-      <pubDate>Mon, 10 Apr 2017 11:00:59 -0400</pubDate>
+      <pubDate>Mon, 18 Oct 2021 11:00:59 -0400</pubDate>
       
       <guid>https://franciscomendozalara.github.io/cfml/projects/project-1/</guid>
       <description>This is an R Shiny app to explore how the linear regression model works.
+Link to the app
+Link to GitHub Repository
  </description>
     </item>
     
     <item>
       <title>Cepstral analysis for acoustic vibrations</title>
       <link>https://franciscomendozalara.github.io/cfml/projects/project-2/</link>
-      <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
+      <pubDate>Mon, 18 Oct 2021 10:58:08 -0400</pubDate>
       
       <guid>https://franciscomendozalara.github.io/cfml/projects/project-2/</guid>
       <description>A common technique used for speech (and sound) analysis is Cepstral analysis. For discrete-time signals, the cepstrum is defined as the inverse discrete-time Fourier Transform of the natural logarithm of the discrete-time Fourier Transform of the signal.
