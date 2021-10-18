@@ -36,8 +36,8 @@
 <meta itemprop="name" content="Cepstral analysis for acoustic vibrations">
 <meta itemprop="description" content="Data Science Project 2"><meta itemprop="datePublished" content="2017-04-09T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2017-04-09T10:58:08-04:00" />
-<meta itemprop="wordCount" content="134">
-<meta itemprop="keywords" content="scene," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="167">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cepstral analysis for acoustic vibrations"/>
 <meta name="twitter:description" content="Data Science Project 2"/>
 
@@ -193,15 +193,33 @@
 
 <p>Human create speech signals through a series of controlled movements of their lungs, vocal cords, tongue, and lips. Speech can be separated into two sound types, voiced and unvoiced. Voiced speech has a roughly regular pattern in its time-frequency structure whereas unvoiced speach does not.</p>
 <p>Simulate data
-An example ilustrate how to obtain the Cepstral coefficients and see what can we infer from them. Each of the coefficients have a different meaning. We first begin simulating a signal with a simple echo:</p>
+We will simulate two signals and we will obtain the Cepstral coefficients from each of these signal to illustrate what we can infer from them. Each of the coefficients have a different meaning. We will simulate the signals using two different impulse respnoses and concolute them with some pulses at time points 50 and 150:</p>
 <p>x(t) = s(t) + <!-- raw HTML omitted -->α *s(t-<!-- raw HTML omitted -->τ)</p>
-<p><!-- raw HTML omitted -->θ<!-- raw HTML omitted -->(x) = θ<!-- raw HTML omitted -->o<!-- raw HTML omitted --> x + θ<!-- raw HTML omitted -->1<!-- raw HTML omitted -->x</p>
 <p>Sampling frequency of 10,000Hz.</p>
+<figure><img src="https://franciscomendozalara.github.io/cfml/images/Impulse_response_1.png"/>
+</figure>
+
+<figure><img src="https://franciscomendozalara.github.io/cfml/images/Impulse_response_2.png"/>
+</figure>
+
+<figure><img src="https://franciscomendozalara.github.io/cfml/images/Pulses.png"/>
+</figure>
+
+<figure><img src="https://franciscomendozalara.github.io/cfml/images/signal_A.png"/>
+</figure>
+
+<figure><img src="https://franciscomendozalara.github.io/cfml/images/signal_B.png"/>
+</figure>
+
+<h1 id="power-spectrum-density">Power Spectrum Density</h1>
+<p>The next step is to compute the Power Spectral Density for each of the signal.</p>
+<figure><img src="https://franciscomendozalara.github.io/cfml/images/PSD_A.png"/>
+</figure>
+
+<figure><img src="https://franciscomendozalara.github.io/cfml/images/PSD_A.png"/>
+</figure>
+
 <ul class="pa0">
-  
-   <li class="list">
-     <a href="https://franciscomendozalara.github.io/cfml/tags/scene" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">scene</a>
-   </li>
   
 </ul>
 <div class="mt6 instapaper_ignoref">
