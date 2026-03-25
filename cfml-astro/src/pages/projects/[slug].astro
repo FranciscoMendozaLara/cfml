@@ -1,0 +1,197 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, getEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(p => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout title={`${project.data.title} — CFML`} description={project.data.description}>
+
+  <article class="project-page">
+    <div class="container">
+
+      <!-- Back -->
+      <a href={base} class="back-link">← back to projects</a>
+
+      <!-- Header -->
+      <header class="project-header">
+        <p class="project-tag">{project.data.tag}</p>
+        <h1 class="project-title">{project.data.title}</h1>
+        <p class="project-desc">{project.data.description}</p>
+
+        <div class="project-meta">
+          {project.data.date && <span class="meta-item">{project.data.date}</span>}
+          {project.data.github && (
+            <a href={project.data.github} target="_blank" rel="noopener" class="meta-link">
+              GitHub →
+            </a>
+          )}
+          {project.data.demo && (
+            <a href={project.data.demo} target="_blank" rel="noopener" class="meta-link">
+              Live demo →
+            </a>
+          )}
+        </div>
+      </header>
+
+      <!-- Project image -->
+      {project.data.image && (
+        <div class="project-image-wrap">
+          <img src={`${base}/${project.data.image}`} alt={project.data.title} />
+        </div>
+      )}
+
+      <!-- Markdown content -->
+      <div class="project-content">
+        <Content />
+      </div>
+
+    </div>
+  </article>
+
+</BaseLayout>
+
+<style>
+  .project-page { padding: 3rem 0 5rem; }
+
+  .back-link {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-faint);
+    margin-bottom: 2.5rem;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .project-header { margin-bottom: 2.5rem; }
+  .project-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+  .project-title {
+    font-size: clamp(28px, 5vw, 44px);
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+  .project-desc {
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: 300;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .project-meta {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.06em;
+  }
+  .meta-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    border: 1px solid var(--border);
+    padding: 5px 14px;
+    border-radius: 999px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .meta-link:hover {
+    border-color: var(--border-hover);
+    color: var(--text);
+  }
+
+  .project-image-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+  .project-image-wrap img {
+    width: 100%;
+    display: block;
+  }
+
+  /* Markdown prose */
+  .project-content {
+    max-width: 680px;
+  }
+  .project-content :global(h2) {
+    font-size: 22px;
+    color: var(--text);
+    margin: 2.5rem 0 0.75rem;
+  }
+  .project-content :global(h3) {
+    font-size: 17px;
+    color: var(--text);
+    margin: 2rem 0 0.5rem;
+  }
+  .project-content :global(p) {
+    font-size: 15px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 1.1rem;
+  }
+  .project-content :global(ul),
+  .project-content :global(ol) {
+    padding-left: 1.4rem;
+    margin-bottom: 1.1rem;
+  }
+  .project-content :global(li) {
+    font-size: 15px;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 0.3rem;
+  }
+  .project-content :global(strong) {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .project-content :global(code) {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: var(--accent);
+  }
+  .project-content :global(pre) {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+  }
+  .project-content :global(pre code) {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+</style>
